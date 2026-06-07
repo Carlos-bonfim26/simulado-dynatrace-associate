@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynatrace Associate — Simulado Oficial</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">DT</div>
+    <div>
+      <div class="logo-label">Dynatrace Certification</div>
+    </div>
+  </div>
+  <div class="header-right" id="header-stats">
+    <div class="hbadge hidden" id="hb-prog">
+      <span>Respondidas</span>
+      <span class="val" id="hd-ans">0</span>/<span id="hd-tot">60</span>
+    </div>
+    <div class="hbadge hidden" id="hb-timer">
+      <span>⏱</span>
+      <span class="val" id="timer-display">00:00</span>
+    </div>
+  </div>
+</header>
+
+<div id="progress-wrap">
+  <div id="progress-bar"></div>
+</div>
+
+<main>
+  <!-- INTRO -->
+  <div id="intro-screen">
+    <div class="intro-eyebrow">Associate Certification Prep</div>
+    <h1>Simulado<br><span class="hl">Dynatrace Associate</span></h1>
+    <p class="subtitle">60 questões sorteadas aleatoriamente do banco de 91 questões validadas com documentação oficial.</p>
+
+    <div class="intro-grid">
+      <div class="icard"><span class="iv">91</span><span class="il">Questões no banco</span></div>
+      <div class="icard"><span class="iv">60</span><span class="il">Por simulado</span></div>
+      <div class="icard"><span class="iv">80%</span><span class="il">Mínimo aprovação</span></div>
+      <div class="icard"><span class="iv">~12</span><span class="il">Temas abordados</span></div>
+    </div>
+
+    <div class="rules">
+      <h3>Como funciona</h3>
+      <div class="rule"><div class="rule-dot">1</div><span>Questões de <strong>única resposta</strong>: vale 1 ponto se correta, 0 se errada.</span></div>
+      <div class="rule"><div class="rule-dot">2</div><span>Questões de <strong>múltiplas respostas</strong>: pontuação proporcional às corretas menos erradas (sem negativar).</span></div>
+      <div class="rule"><div class="rule-dot">3</div><span>Ao finalizar, veja sua nota, acertos por tema e o gabarito completo.</span></div>
+      <div class="rule"><div class="rule-dot">4</div><span>Média para aprovação: <strong>80%</strong>.</span></div>
+    </div>
+
+    <button class="btn" onclick="startExam()">▶ Iniciar Simulado</button>
+  </div>
+
+  <!-- EXAM -->
+  <div id="exam-screen" class="hidden">
+    <div id="result-screen" class="hidden"></div>
+    <div id="topic-section" class="hidden">
+      <div class="section-title">📊 Desempenho por Tema</div>
+      <div class="topic-grid" id="topic-grid"></div>
+    </div>
+    <div id="answer-divider" class="answer-divider hidden">📋 Gabarito Comentado</div>
+    <div id="questions-container"></div>
+  </div>
+</main>
+
+<div id="nav-bar" class="hidden">
+  <div class="nav-info">
+    <strong id="nav-ans">0</strong>/<span id="nav-tot">60</span> respondidas
+  </div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <button class="btn btn-outline" onclick="scrollToTop()">↑ Topo</button>
+    <button class="btn" id="submit-btn" onclick="submitExam()">Finalizar Simulado</button>
+  </div>
+</div>
+
+<div id="scroll-top" onclick="scrollToTop()">↑</div>
+
+<script src="main.js"></script>
+</body>
+</html>
